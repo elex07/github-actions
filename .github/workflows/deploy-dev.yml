@@ -10,9 +10,9 @@ on:
 
 jobs:
   build-and-deploy:
-    #runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
 # Below attribute will deploy on respective server
-    runs-on: [self-hosted, dev]
+    #runs-on: [self-hosted, dev]
 
     steps:
       - name: Checkout dev branch
