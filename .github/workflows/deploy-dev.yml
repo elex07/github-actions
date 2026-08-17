@@ -51,8 +51,8 @@ jobs:
       - name: Deploy with docker-compose
         run: |
           export IMAGE_TAG=${{ env.IMAGE_TAG }}
-          docker-compose down
-          docker-compose up -d
+          docker compose down
+          docker compose up -d
 
       - name: Clean up dangling images
         run: docker image prune -f
