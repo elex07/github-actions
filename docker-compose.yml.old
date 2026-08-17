@@ -1,15 +1,17 @@
 version: '2'
-services:
+services:            
     apache:
-        image: pavielex/wasapache:${IMAGE_TAG:-latest}
+        image: pavielex/wasapache:latest
+        build: ./apache   
         container_name: wasapache
         ports:
             - 80:80
         depends_on:
             - maven-build
-
+                      
     maven-build:
-        image: pavielex/wasmaven:${IMAGE_TAG:-latest}
+        image: pavielex/wasmaven:latest
+        build: ./maven
         container_name: wasmaven
         restart: always
         ports:
